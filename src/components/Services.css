@@ -1,36 +1,48 @@
 .services {
   background-color: var(--light);
+  padding: 4rem 0;
 }
 
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+.services-container1 {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.service-card {
+.service-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   background-color: var(--white);
-  border-radius: 8px;
+  border-radius: 10px;
   padding: 2rem;
   box-shadow: var(--shadow);
-  transition: var(--transition);
-  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
 }
 
-.service-card:hover {
+.service-section:hover {
   transform: translateY(-10px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.service-section:hover .service-description {
+  transform: translateX(0);
 }
 
 .service-icon {
-  width: 80px;
-  height: 80px;
+  width: 120px;
+  height: 120px;
   background-color: rgba(78, 123, 255, 0.1);
   border-radius: 50%;
   display: flex;
-  align-items: center;
   justify-content: center;
-  margin: 0 auto 1.5rem;
+  align-items: center;
+  transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 .service-icon i {
@@ -38,25 +50,43 @@
   color: var(--primary);
 }
 
-.service-card h3 {
+.service-section:hover .service-icon {
+  background-color: var(--primary);
+}
+
+.service-section:hover .service-icon i {
+  transform: scale(1.2);
+}
+
+.service-description {
+  flex: 1;
+  margin-left: 2rem;
+  transform: translateX(-100%);
+  transition: transform 0.5s ease;
+}
+
+.service-description h3 {
+  font-size: 1.5rem;
   margin-bottom: 1rem;
 }
 
-.service-card p {
+.service-description p {
   color: var(--gray);
+  font-size: 1rem;
   margin-bottom: 1.5rem;
 }
 
 .service-link {
-  display: inline-block;
   color: var(--primary);
   font-weight: 600;
-  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  transition: color 0.3s ease;
 }
 
 .service-link i {
   margin-left: 5px;
-  transition: var(--transition);
+  transition: transform 0.3s ease;
 }
 
 .service-link:hover {
@@ -67,14 +97,16 @@
   transform: translateX(5px);
 }
 
-@media (max-width: 992px) {
-  .services-grid {
-    grid-template-columns: repeat(2, 1fr);
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .service-section {
+    flex-direction: column;
+    text-align: center;
   }
-}
 
-@media (max-width: 576px) {
-  .services-grid {
-    grid-template-columns: 1fr;
+  .service-description {
+    margin-left: 0;
+    transform: translateX(0);
+    margin-top: 1rem;
   }
 }
