@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import { FaBars, FaTimes } from "react-icons/fa" // Import React Icons
 import "./Header.css"
 import Logo from "./Logo"
 
@@ -25,51 +26,56 @@ const Header = () => {
     setMobileMenuOpen(!mobileMenuOpen)
   }
 
+  const handleMenuItemClick = () => {
+    if (mobileMenuOpen) {
+      setMobileMenuOpen(false)
+    }
+  }
+
   return (
     <header className={`header ${isScrolled ? "scrolled" : ""}`}>
       <div className="container header-container">
-        <Logo/>
+        <Logo />
 
+        {/* Replace spans with React Icons */}
         <div className="mobile-toggle" onClick={toggleMobileMenu}>
-          <span></span>
-          <span></span>
-          <span></span>
+          {mobileMenuOpen ? <FaTimes className="menu-icon" /> : <FaBars className="menu-icon" />}
         </div>
 
         <nav className={`nav ${mobileMenuOpen ? "open" : ""}`}>
-          <ul className="nav-list" style={{color: "#ffff"}}>
+          <ul className="nav-list" style={{ color: "#ffff" }}>
             <li className="nav-item">
-              <a href="#home" className="nav-link" >
+              <a href="#home" className="nav-link" onClick={handleMenuItemClick}>
                 Home
               </a>
             </li>
             <li className="nav-item">
-              <a href="#about" className="nav-link">
+              <a href="#about" className="nav-link" onClick={handleMenuItemClick}>
                 About Us
               </a>
             </li>
             <li className="nav-item">
-              <a href="#services" className="nav-link">
+              <a href="#services" className="nav-link" onClick={handleMenuItemClick}>
                 Services
               </a>
             </li>
             <li className="nav-item">
-              <a href="#countries" className="nav-link">
+              <a href="#countries" className="nav-link" onClick={handleMenuItemClick}>
                 Countries
               </a>
             </li>
             <li className="nav-item">
-              <a href="#process" className="nav-link">
+              <a href="#process" className="nav-link" onClick={handleMenuItemClick}>
                 Process
               </a>
             </li>
             <li className="nav-item">
-              <a href="#testimonials" className="nav-link">
+              <a href="#testimonials" className="nav-link" onClick={handleMenuItemClick}>
                 Testimonials
               </a>
             </li>
             <li className="nav-item">
-              <a href="#contact" className="nav-link">
+              <a href="#contact" className="nav-link" onClick={handleMenuItemClick}>
                 Contact
               </a>
             </li>

@@ -86,10 +86,10 @@ header.scrolled .nav-link {
   
   .nav {
     position: fixed;
-    top: 80px;
+    top: 65px;
     left: -100%;
     width: 100%;
-    height: calc(100vh - 80px);
+    height: calc(102vh - 80px);
     background-color: var(--white);
     transition: var(--transition);
     padding: 2rem;

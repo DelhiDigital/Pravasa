@@ -53,7 +53,7 @@ const Footer = () => {
             <h3>Our Services</h3>
             <ul className="footer-links">
               <li>
-                <a href="#services">Study Visa</a>
+                <a href="#services">Study </a>
               </li>
               <li>
                 <a href="#services">Work Permit</a>
@@ -68,7 +68,7 @@ const Footer = () => {
                 <a href="#services">Business Immigration</a>
               </li>
               <li>
-                <a href="#services">Tourist Visa</a>
+                <a href="#services">Tourist </a>
               </li>
             </ul>
           </div>
