@@ -80,7 +80,7 @@ const Countries = () => {
                       <span className="program-pill" key={index}>{program}</span>
                     ))}
                   </div>
-                  <button className="explore-btn">Learn More</button>
+                  <a href="#contact" className="explore-btn">Learn More</a>
                 </div>
                 <div className="destination-visual">
                   <div className="image-container">

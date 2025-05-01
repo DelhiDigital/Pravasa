@@ -12,14 +12,14 @@ import {
   FaPlaneDeparture, 
 } from "react-icons/fa";
 const services = [
-  { name: "Study ", icon: <FaGraduationCap size={50} color="#819cd7" />, link: "#" },
-  { name: "Work Permit", icon: <FaBriefcase size={50} color="#819cd7" />, link: "#" },
-  { name: "Permanent Residency", icon: <FaHome size={50} color="#819cd7" />, link: "#" },
-  { name: "Family Immigration", icon: <FaUsers size={50} color="#819cd7" />, link: "#" },
-  { name: "Business Immigration", icon: <FaBuilding size={50} color="#819cd7" />, link: "#" },
-  { name: "Tourist ", icon: <FaPlane size={50} color="#819cd7" />, link: "#" },
-  { name: "Air ticket service ", icon: <FaPlaneDeparture size={50} color="#819cd7" />, link: "#" },
-  { name: "Show Money assistance", icon: <FaFileInvoiceDollar size={50} color="#819cd7" />, link: "#" }
+  { name: "Study ", icon: <FaGraduationCap size={50} color="#819cd7" />, link: "#contact" },
+  { name: "Work Permit", icon: <FaBriefcase size={50} color="#819cd7" />, link: "#contact" },
+  { name: "Permanent Residency", icon: <FaHome size={50} color="#819cd7" />, link: "#contact" },
+  { name: "Family Immigration", icon: <FaUsers size={50} color="#819cd7" />, link: "#contact" },
+  { name: "Business Immigration", icon: <FaBuilding size={50} color="#819cd7" />, link: "#contact" },
+  { name: "Tourist ", icon: <FaPlane size={50} color="#819cd7" />, link: "#contact" },
+  { name: "Air ticket service ", icon: <FaPlaneDeparture size={50} color="#819cd7" />, link: "#contact" },
+  { name: "Show Money assistance", icon: <FaFileInvoiceDollar size={50} color="#819cd7" />, link: "#contact" }
 ];
 
 const ServicesSectionWithIcons = () => {
