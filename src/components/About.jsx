@@ -5,8 +5,7 @@ const About = () => {
     <section id="about" className="section about">
       <div className="container">
         <div className="section-title">
-          <h2>About Pravasa</h2>
-          <p>Your trusted partner for immigration and visa services</p>
+          <h2>Your trusted partner for immigration and visa services</h2>
         </div>
 
         <div className="about-content">
@@ -15,41 +14,43 @@ const About = () => {
           </div>
 
           <div className="about-text">
-            <h3>Why Choose Pravasa?</h3>
-            <p>
-              With over 15 years of experience in the immigration industry, Pravasa has established itself as a leading
-              immigration consultancy firm. We specialize in providing comprehensive immigration solutions to
-              individuals, families, and businesses.
-            </p>
+            <div className="about-text-content">
+              <h3>Why Choose Pravasa?</h3>
+              <p>
+                With over 15 years of experience in the immigration industry, Pravasa has established itself as a
+                leading immigration consultancy firm. We specialize in providing comprehensive immigration solutions to
+                individuals, families, and businesses.
+              </p>
 
-            <div className="about-features">
-              <div className="feature">
-                <div className="feature-icon">
-                  <i className="fas fa-check-circle"></i>
+              <div className="about-features">
+                <div className="feature">
+                  <div className="feature-icon">
+                    <i className="fas fa-check-circle"></i>
+                  </div>
+                  <div className="feature-text">
+                    <h4>Licensed Consultants</h4>
+                    <p>Our team consists of licensed immigration consultants with years of experience.</p>
+                  </div>
                 </div>
-                <div className="feature-text">
-                  <h4>Licensed Consultants</h4>
-                  <p>Our team consists of licensed immigration consultants with years of experience.</p>
-                </div>
-              </div>
 
-              <div className="feature">
-                <div className="feature-icon">
-                  <i className="fas fa-globe"></i>
+                <div className="feature">
+                  <div className="feature-icon">
+                    <i className="fas fa-globe"></i>
+                  </div>
+                  <div className="feature-text">
+                    <h4>Global Presence</h4>
+                    <p>With offices in multiple countries, we provide services worldwide.</p>
+                  </div>
                 </div>
-                <div className="feature-text">
-                  <h4>Global Presence</h4>
-                  <p>With offices in multiple countries, we provide services worldwide.</p>
-                </div>
-              </div>
 
-              <div className="feature">
-                <div className="feature-icon">
-                  <i className="fas fa-trophy"></i>
-                </div>
-                <div className="feature-text">
-                  <h4>High Success Rate</h4>
-                  <p>We pride ourselves on our high visa approval success rate.</p>
+                <div className="feature">
+                  <div className="feature-icon">
+                    <i className="fas fa-trophy"></i>
+                  </div>
+                  <div className="feature-text">
+                    <h4>High Success Rate</h4>
+                    <p>We pride ourselves on our high visa approval success rate.</p>
+                  </div>
                 </div>
               </div>
             </div>

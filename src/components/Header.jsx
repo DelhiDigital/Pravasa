@@ -134,11 +134,11 @@ const Header = () => {
                 ))}
               </div>
             </li> */}
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <Link to="#process" className="nav-link" onClick={handleMenuItemClick}>
                 Process
               </Link>
-            </li> 
+            </li>  */}
             <li className="nav-item">
               <Link to="/faq" className="nav-link" onClick={handleMenuItemClick}>
                 FAQ

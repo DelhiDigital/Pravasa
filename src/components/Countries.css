@@ -58,16 +58,16 @@
 .explore-header h2 {
   font-size: 2.8rem;
   margin-bottom: 1rem;
-  color: #222;
+  color: #333333;
   font-weight: 700;
 }
 
 .highlight {
-  background: linear-gradient(135deg, #7d5aff, #ff5a7d);
+  background: linear-gradient(135deg, #333333, #333333);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  color: transparent;
+  color: #333333;
 }
 
 .explore-header p {
@@ -218,7 +218,7 @@
 }
 
 .contact-advisor-btn {
-  background: linear-gradient(135deg, #7d5aff, #ff5a7d);
+  background:#758fc6;
   color: white;
   border: none;
   padding: 1rem 2rem;

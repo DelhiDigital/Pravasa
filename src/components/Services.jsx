@@ -5,10 +5,10 @@ const Services = () => {
   return (
     <section id="services" className="section services">
       <div className="container">
-        <div className="section-title">
+        {/* <div className="section-title">
           <h2>Our Services</h2>
           <p>Comprehensive immigration solutions tailored to your needs</p>
-        </div>
+        </div> */}
         <div className="services-container1">
         <ServiceeSectionWithIcon />
         </div>

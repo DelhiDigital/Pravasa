@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 3rem;
-  align-items: center;
+  align-items: stretch; /* Changed from center to stretch for equal height */
 }
 
 .about-image {
@@ -10,6 +10,8 @@
   overflow: hidden;
   border-radius: 8px;
   box-shadow: var(--shadow);
+  height: 100%; /* Ensure full height */
+  display: flex; /* Added to contain the image properly */
 }
 
 .about-image::before {
@@ -38,13 +40,21 @@
 
 .about-image img {
   width: 100%;
-  height: auto;
+  height: 100%; /* Changed to 100% to fill the container */
   display: block;
+  object-fit: cover; /* Ensures the image covers the area without distortion */
   transition: var(--transition);
 }
 
 .about-image:hover img {
   transform: scale(1.05);
+}
+
+.about-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Distributes space evenly */
+  height: 100%; /* Ensure full height */
 }
 
 .about-text h3 {
@@ -54,6 +64,7 @@
 
 .about-features {
   margin: 2rem 0;
+  flex-grow: 1; /* Allow features to grow and take available space */
 }
 
 .feature {
@@ -77,6 +88,11 @@
   color: var(--gray);
 }
 
+.about-text .btn {
+  align-self: flex-start; /* Aligns button to the start of the flex container */
+  margin-top: 1rem; /* Adds some space above the button */
+}
+
 @media (max-width: 992px) {
   .about-content {
     grid-template-columns: 1fr;
@@ -84,5 +100,18 @@
 
   .about-image {
     margin-bottom: 2rem;
+    height: 400px; /* Fixed height on mobile for better appearance */
+  }
+}
+
+@media (max-width: 768px) {
+  .about-image {
+    height: 350px; /* Slightly smaller on smaller screens */
+  }
+}
+
+@media (max-width: 576px) {
+  .about-image {
+    height: 300px; /* Even smaller on very small screens */
   }
 }

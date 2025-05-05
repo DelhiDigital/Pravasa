@@ -22,14 +22,14 @@ if (typeof window !== "undefined") {
 }
 
 const services = [
-  { name: "Study", icon: <FaGraduationCap size={50} color="#819cd7" />, link: "#contact" },
-  { name: "Work Permit", icon: <FaBriefcase size={50} color="#819cd7" />, link: "#contact" },
-  { name: "Permanent Residency", icon: <FaHome size={50} color="#819cd7" />, link: "#contact" },
-  { name: "Family Immigration", icon: <FaUsers size={50} color="#819cd7" />, link: "#contact" },
-  { name: "Business Immigration", icon: <FaBuilding size={50} color="#819cd7" />, link: "#contact" },
-  { name: "Tourist", icon: <FaPlane size={50} color="#819cd7" />, link: "#contact" },
-  { name: "Air ticket service", icon: <FaPlaneDeparture size={50} color="#819cd7" />, link: "#contact" },
-  { name: "Show Money assistance", icon: <FaFileInvoiceDollar size={50} color="#819cd7" />, link: "#contact" },
+  { name: "Study", icon: <FaGraduationCap size={40} color="#819cd7" />, link: "#contact" },
+  { name: "Work Permit", icon: <FaBriefcase size={40} color="#819cd7" />, link: "#contact" },
+  { name: "Permanent Residency", icon: <FaHome size={40} color="#819cd7" />, link: "#contact" },
+  { name: "Family Immigration", icon: <FaUsers size={40} color="#819cd7" />, link: "#contact" },
+  { name: "Business Immigration", icon: <FaBuilding size={40} color="#819cd7" />, link: "#contact" },
+  { name: "Tourist", icon: <FaPlane size={40} color="#819cd7" />, link: "#contact" },
+  { name: "Air ticket service", icon: <FaPlaneDeparture size={40} color="#819cd7" />, link: "#contact" },
+  { name: "Show Money assistance", icon: <FaFileInvoiceDollar size={40} color="#819cd7" />, link: "#contact" },
 ]
 
 const ServicesSectionWithIcons = () => {
@@ -134,8 +134,8 @@ const ServicesSectionWithIcons = () => {
       </div>
 
       <div className="service-section-content" ref={contentRef}>
-        <span className="service-section-expertise-label">Our Expertise</span>
-        <h2 className="service-section-heading">Let Us Help You Discover Your Future</h2>
+        <span className="service-section-heading ">Our Expertise</span>
+        <h2 className="service-section-expertise-label">Let Us Help You Discover Your Future</h2>
         <p className="service-section-description">
           Embark on a migration journey seamlessly tailored to your lifestyle, where every step is enriched by our
           personalized touch, ensuring an unforgettable experience that reflects our commitment to enhancing your life's
