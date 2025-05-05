@@ -1,101 +1,265 @@
 .process {
   background-color: var(--light);
   position: relative;
+  padding: 5rem 0;
 }
 
-.process-timeline {
-  position: relative;
-  max-width: 800px;
+/* Process header styling */
+.process-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.process-main-title {
+  font-size: 2.8rem;
+  color: var(--dark);
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.title-underline {
+  height: 4px;
+  width: 80px;
+  background-color: var(--primary);
+  margin: 0.5rem auto 1.5rem;
+  border-radius: 2px;
+}
+
+.process-subtitle {
+  font-size: 1.3rem;
+  color: var(--gray);
+  max-width: 700px;
   margin: 0 auto;
-  padding: 2rem 0;
 }
 
-.process-timeline::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 50px;
-  height: 100%;
-  width: 4px;
+/* Process flow styling */
+.process-flow {
+  margin: 4rem 0 2rem;
+  position: relative;
+  width: 100%;
+}
+
+.process-steps-container {
+  width: 100%;
+  overflow: hidden; /* Prevent horizontal scrolling */
+}
+
+.process-steps {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  gap: 0; /* Remove gap to maximize space */
+}
+
+/* Chevron styling */
+.process-step-chevron {
+  position: relative;
+  flex: 1;
+  margin: 0;
+  padding: 0;
+  background-color: var(--primary);
+  color: white;
+  height: 320px;
+  clip-path: polygon(0 0, 90% 0, 100% 50%, 90% 100%, 0 100%, 10% 50%);
+  display: flex;
+  flex-direction: column;
+  min-width: 0; /* Allow shrinking below content size */
+}
+
+/* First chevron has different clip-path */
+.process-step-chevron:first-child {
+  clip-path: polygon(0 0, 90% 0, 100% 50%, 90% 100%, 0 100%);
+}
+
+/* Last chevron has different clip-path */
+.process-step-chevron:last-child {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 10% 50%);
+}
+
+/* Alternating colors */
+.process-step-chevron:nth-child(odd) {
   background-color: var(--primary);
 }
 
-.process-step {
-  position: relative;
-  margin-bottom: 3rem;
-  padding-left: 100px;
+.process-step-chevron:nth-child(even) {
+  background-color: var(--secondary);
 }
 
-.process-step:last-child {
-  margin-bottom: 0;
-}
-
+/* Step number */
 .step-number {
   position: absolute;
-  left: 0;
-  top: 0;
-  width: 50px;
-  height: 50px;
-  background-color: var(--primary);
-  color: var(--white);
+  top: 5px;
+  left: 21%;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 30px;
+  background-color: white;
+  color: var(--dark);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.5rem;
   font-weight: 700;
+  font-size: 1rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   z-index: 2;
 }
 
-.step-content {
-  background-color: var(--white);
-  border-radius: 8px;
-  padding: 2rem;
-  box-shadow: var(--shadow);
-  transition: var(--transition);
-}
-
-.step-content:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+.chevron-header {
+  padding: 20px 15px 10px;
+  text-align: center;
 }
 
 .step-icon {
-  margin-bottom: 1rem;
-  color: var(--primary);
-  font-size: 2rem;
+  font-size: 1.75rem;
+  margin-bottom: 10px;
+  color: white;
 }
 
-.step-content h3 {
-  margin-bottom: 1rem;
+.process-step-chevron h3 {
+  margin: 0;
+  font-size: 1rem;
+  color: white;
+  font-weight: 600;
 }
 
-.step-content p {
-  color: var(--gray);
-  margin-bottom: 0;
+.chevron-details {
+  padding: 0 15px 20px 25px;
+  flex-grow: 1;
+}
+
+.chevron-details ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.chevron-details li {
+  position: relative;
+  padding-left: 15px;
+  margin-bottom: 8px;
+  font-size: 0.8rem;
+  line-height: 1.3;
+}
+
+.chevron-details li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .process-cta {
-  margin-top: 4rem;
+  margin-top: 3rem;
 }
 
 .process-cta p {
   font-size: 1.25rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Responsive styles */
+@media (max-width: 1200px) {
+  .process-step-chevron {
+    height: 340px;
+  }
+
+  .chevron-details li {
+    font-size: 0.75rem;
+  }
+
+  .process-main-title {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .process-steps {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .process-step-chevron {
+    flex: 0 0 32.5%;
+    margin-bottom: 30px;
+    height: 300px;
+    max-width: 32.5%;
+  }
+
+  .process-step-chevron:nth-child(3n + 1) {
+    clip-path: polygon(0 0, 90% 0, 100% 50%, 90% 100%, 0 100%);
+  }
+
+  .process-step-chevron:nth-child(3n) {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 10% 50%);
+  }
+
+  .process-step-chevron:nth-child(3n + 2) {
+    clip-path: polygon(0 0, 90% 0, 100% 50%, 90% 100%, 0 100%, 10% 50%);
+  }
+
+  .process-main-title {
+    font-size: 2.2rem;
+  }
+
+  .process-subtitle {
+    font-size: 1.2rem;
+  }
 }
 
 @media (max-width: 768px) {
-  .process-timeline::before {
-    left: 30px;
+  .process-step-chevron {
+    flex: 0 0 49.5%;
+    max-width: 49.5%;
   }
 
-  .process-step {
-    padding-left: 70px;
+  .process-step-chevron:nth-child(odd) {
+    clip-path: polygon(0 0, 90% 0, 100% 50%, 90% 100%, 0 100%);
   }
 
-  .step-number {
-    width: 40px;
-    height: 40px;
-    font-size: 1.25rem;
+  .process-step-chevron:nth-child(even) {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 10% 50%);
+  }
+
+  .process-main-title {
+    font-size: 2rem;
+  }
+
+  .process-subtitle {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .process-steps {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .process-step-chevron {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 30px;
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 50% 100%, 0 90%);
+    padding-bottom: 20px;
+  }
+
+  .process-step-chevron:first-child,
+  .process-step-chevron:last-child,
+  .process-step-chevron:nth-child(3n + 1),
+  .process-step-chevron:nth-child(3n),
+  .process-step-chevron:nth-child(3n + 2),
+  .process-step-chevron:nth-child(odd),
+  .process-step-chevron:nth-child(even) {
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 50% 100%, 0 90%);
+  }
+
+  .process-main-title {
+    font-size: 1.8rem;
+  }
+
+  .process-subtitle {
+    font-size: 1rem;
   }
 }

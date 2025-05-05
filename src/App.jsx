@@ -8,6 +8,7 @@ import Testimonials from "./components/Testimonials"
 import Contact from "./components/Contact"
 import Footer from "./components/Footer"
 import WhatsAppButton from "./components/WhatsAppButton"
+import FAQ from "./components/FAQ"
 
 import "./App.css"
 
@@ -19,6 +20,7 @@ function App() {
       <About />
       <Services />
       <Countries />
+      <FAQ />
       <Process />
       <Testimonials />
       <Contact />

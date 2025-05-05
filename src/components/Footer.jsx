@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import "./Footer.css"
 import Logo from "./Logo"
 
@@ -7,7 +8,9 @@ const Footer = () => {
       <div className="container">
         <div className="footer-top">
           <div className="footer-column">
-            <Logo />
+            <Link to="/" className="logo-link">
+              <Logo />
+            </Link>
             <p className="footer-description">
               Pravasa is a leading immigration consultancy firm specializing in providing comprehensive immigration
               solutions to individuals, families, and businesses.
@@ -26,25 +29,25 @@ const Footer = () => {
             <h3>Quick Links</h3>
             <ul className="footer-links">
               <li>
-                <a href="#home">Home</a>
+                <Link to="/">Home</Link>
               </li>
               <li>
-                <a href="#about">About Us</a>
+                <Link to="/about">About Us</Link>
               </li>
               <li>
-                <a href="#services">Services</a>
+                <Link to="/#services">Services</Link>
               </li>
               <li>
-                <a href="#countries">Countries</a>
+                <Link to="/#countries">Countries</Link>
               </li>
               <li>
-                <a href="#process">Process</a>
+                <Link to="/#process">Process</Link>
               </li>
               <li>
-                <a href="#testimonials">Testimonials</a>
+                <Link to="/#testimonials">Testimonials</Link>
               </li>
               <li>
-                <a href="#contact">Contact</a>
+                <Link to="/#contact">Contact</Link>
               </li>
             </ul>
           </div>
@@ -53,22 +56,22 @@ const Footer = () => {
             <h3>Our Services</h3>
             <ul className="footer-links">
               <li>
-                <a href="#services">Study </a>
+                <Link to="/#services">Study Visa</Link>
               </li>
               <li>
-                <a href="#services">Work Permit</a>
+                <Link to="/#services">Work Permit</Link>
               </li>
               <li>
-                <a href="#services">Permanent Residency</a>
+                <Link to="/#services">Permanent Residency</Link>
               </li>
               <li>
-                <a href="#services">Family Immigration</a>
+                <Link to="/#services">Family Immigration</Link>
               </li>
               <li>
-                <a href="#services">Business Immigration</a>
+                <Link to="/#services">Business Immigration</Link>
               </li>
               <li>
-                <a href="#services">Tourist </a>
+                <Link to="/#services">Tourist Visa</Link>
               </li>
             </ul>
           </div>
@@ -88,9 +91,9 @@ const Footer = () => {
         <div className="footer-bottom">
           <p>&copy; {new Date().getFullYear()} Pravasa Immigration. All Rights Reserved.</p>
           <div className="footer-bottom-links">
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms of Service</a>
-            <a href="#">Disclaimer</a>
+            <Link to="/privacy-policy">Privacy Policy</Link>
+            <Link to="/terms-of-service">Terms of Service</Link>
+            <Link to="/disclaimer">Disclaimer</Link>
           </div>
         </div>
       </div>

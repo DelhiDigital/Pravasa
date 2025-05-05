@@ -1,0 +1,114 @@
+.faq {
+    background-color: #f5f7fa;
+    padding: 5rem 0;
+  }
+  
+  .faq-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 2rem;
+    justify-content: center;
+  }
+  
+  .faq-tab {
+    padding: 12px 24px;
+    background-color: #fff;
+    border: none;
+    border-radius: 30px;
+    font-weight: 600;
+    color: var(--dark);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  }
+  
+  .faq-tab:hover {
+    background-color: rgba(78, 123, 255, 0.1);
+  }
+  
+  .faq-tab.active {
+    background-color: #1a2b49;
+    color: white;
+  }
+  
+  .faq-content {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+  }
+  
+  .faq-item {
+    border-bottom: 1px solid #eee;
+  }
+  
+  .faq-item:last-child {
+    border-bottom: none;
+  }
+  
+  .faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .faq-question:hover {
+    background-color: rgba(78, 123, 255, 0.05);
+  }
+  
+  .faq-question h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--dark);
+  }
+  
+  .faq-icon {
+    color: var(--primary);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+  }
+  
+  .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    padding: 0 1.5rem;
+  }
+  
+  .faq-answer.active {
+    max-height: 500px;
+    padding: 0 1.5rem 1.5rem;
+  }
+  
+  .faq-answer p {
+    margin: 0;
+    color: var(--gray);
+    line-height: 1.6;
+  }
+  
+  @media (max-width: 768px) {
+    .faq-tabs {
+      flex-direction: row;
+      overflow-x: auto;
+      padding-bottom: 10px;
+      justify-content: flex-start;
+    }
+  
+    .faq-tab {
+      flex: 0 0 auto;
+      white-space: nowrap;
+    }
+  
+    .faq-question h3 {
+      font-size: 1rem;
+      padding-right: 10px;
+    }
+  }
+  
