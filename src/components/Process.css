@@ -67,14 +67,14 @@
 }
 
 /* First chevron has different clip-path */
-.process-step-chevron:first-child {
+ .process-step-chevron:first-child {
   clip-path: polygon(0 0, 90% 0, 100% 50%, 90% 100%, 0 100%);
 }
 
 /* Last chevron has different clip-path */
 .process-step-chevron:last-child {
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 10% 50%);
-}
+} 
 
 /* Alternating colors */
 .process-step-chevron:nth-child(odd) {
