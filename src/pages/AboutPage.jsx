@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom"
 import Header from "../components/Header"
 import Footer from "../components/Footer"
+import StatisticsSection from "../components/StatisticsSection"
 import WhatsAppButton from "../components/WhatsAppButton"
 import { FaCheckCircle, FaUsers, FaGlobe, FaTrophy, FaHandshake, FaChartLine } from "react-icons/fa"
 import "../components/AboutPage.css"
@@ -177,7 +178,8 @@ const AboutPage = () => {
           </div>
         </section>
 
-        <section className="stats-section">
+        <StatisticsSection />
+        {/* <section className="stats-section">
           <div className="container">
             <div className="stats-grid">
               <div className="stat-item">
@@ -198,7 +200,7 @@ const AboutPage = () => {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
 
         <section className="cta-section">
           <div className="container">

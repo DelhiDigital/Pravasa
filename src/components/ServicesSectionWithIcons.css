@@ -13,7 +13,7 @@
 
 .service-section-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* Changed to 4 columns */
+  grid-template-columns: repeat(3, 1fr); /* Changed to 4 columns */
   gap: 15px; /* Reduced gap to fit more cards */
   padding: 0;
 }

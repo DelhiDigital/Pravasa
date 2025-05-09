@@ -28,8 +28,8 @@ const services = [
   { name: "Family Immigration", icon: <FaUsers size={40} color="#819cd7" />, link: "#contact" },
   { name: "Business Immigration", icon: <FaBuilding size={40} color="#819cd7" />, link: "#contact" },
   { name: "Tourist", icon: <FaPlane size={40} color="#819cd7" />, link: "#contact" },
-  { name: "Air ticket service", icon: <FaPlaneDeparture size={40} color="#819cd7" />, link: "#contact" },
-  { name: "Show Money assistance", icon: <FaFileInvoiceDollar size={40} color="#819cd7" />, link: "#contact" },
+  // { name: "Air ticket service", icon: <FaPlaneDeparture size={40} color="#819cd7" />, link: "#contact" },
+  // { name: "Show Money assistance", icon: <FaFileInvoiceDollar size={40} color="#819cd7" />, link: "#contact" },
 ]
 
 const ServicesSectionWithIcons = () => {

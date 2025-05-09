@@ -36,7 +36,7 @@
 
 .service-text-container {
   height: 60px; /* Increased height to prevent layout shifts */
-  overflow: hidden;
+  /* overflow: hidden; */
   margin-bottom: 2rem;
 }
 
@@ -44,9 +44,10 @@
   font-size: 3.5rem; /* Same size as the title */
   font-weight: 700;
   color: var(--primary-dark);
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  /* text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5); */
   margin: 0;
   line-height: 1.2;
+  color: #13306f;
 }
 
 .hero-cta {

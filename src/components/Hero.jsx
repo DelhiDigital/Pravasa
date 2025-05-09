@@ -81,9 +81,9 @@ const Hero = () => {
           <div className="service-text-container">
             <p className="service-text" ref={serviceTextRef}></p>
           </div>
-          <a href="#contact" className="btn btn-primary hero-cta">
+          {/* <a href="#contact" className="btn btn-primary hero-cta">
             Get Free Assessment
-          </a>
+          </a> */}
         </div>
       </div>
     </section>
