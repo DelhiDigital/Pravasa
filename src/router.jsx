@@ -2,6 +2,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import App from "./App"
 import AboutPage from "./pages/AboutPage"
 import ErrorPage from "./pages/ErrorPage"
+import ServiceDetailPage from "./pages/ServicePage"
 
 const router = createBrowserRouter([
   {
@@ -12,6 +13,11 @@ const router = createBrowserRouter([
   {
     path: "/about",
     element: <AboutPage />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/services/:slug",
+    element: <ServiceDetailPage />,
     errorElement: <ErrorPage />,
   },
 ])
