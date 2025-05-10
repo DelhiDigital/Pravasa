@@ -51,15 +51,25 @@ const Header = () => {
 
   // Services dropdown items
   const servicesDropdown = [
-    { id: 1, title: "Study Visa", to: "/#services" },
-    { id: 2, title: "Work Permit", to: "/#services" },
-    { id: 3, title: "Permanent Residency", to: "/#services" },
-    { id: 4, title: "Family Immigration", to: "/#services" },
-    { id: 5, title: "Business Immigration", to: "/#services" },
-    { id: 6, title: "Tourist Visa", to: "/#services" },
-    { id: 7, title: "Air Ticket Service", to: "/#services" },
-    { id: 8, title: "Show Money Assistance", to: "/#services" },
+    { id: 1, title: "Study Visa", to: "/#services/study" },
+    { id: 2, title: "Work Permit", to: "/#services/work-permit" },
+    { id: 3, title: "Permanent Residency", to: "/#services/permanent-residency" },
+    { id: 4, title: "Family Immigration", to: "/#services/family-immigration" },
+    { id: 5, title: "Business Immigration", to: "/#services/business-immigration" },
+    { id: 6, title: "Tourist Visa", to: "/#services/tourist" },
+    { id: 7, title: "Air Ticket Service", to: "/#services/air-ticket-service" },
+    { id: 8, title: "Show Money Assistance", to: "/#services/show-money-assistance" },
   ]
+  // const servicesDropdown = [
+  //   { id: 1, title: "Study Visa", to: "/#services" },
+  //   { id: 2, title: "Work Permit", to: "/#services" },
+  //   { id: 3, title: "Permanent Residency", to: "/#services" },
+  //   { id: 4, title: "Family Immigration", to: "/#services" },
+  //   { id: 5, title: "Business Immigration", to: "/#services" },
+  //   { id: 6, title: "Tourist Visa", to: "/#services" },
+  //   { id: 7, title: "Air Ticket Service", to: "/#services" },
+  //   { id: 8, title: "Show Money Assistance", to: "/#services" },
+  // ]
 
   // Countries dropdown items
   const countriesDropdown = [

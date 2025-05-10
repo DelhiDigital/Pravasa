@@ -14,6 +14,7 @@ const router = createBrowserRouter([
     element: <AboutPage />,
     errorElement: <ErrorPage />,
   },
+  
 ])
 
 const Router = () => {
