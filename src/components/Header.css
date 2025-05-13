@@ -1,18 +1,19 @@
 .header {
   position: fixed;
   top: 0;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 5%;
+  /* transform: translateX(-50%); */
   width: 90%;
   z-index: 1000;
   background-color: transparent;
   background-color: #ffff;
-  height: 60px;
-  /* border-radius: 40px; */
+  height: 70px;
+  border-radius: 10px;
   margin-top: 15px;
+  
   display: flex;
   align-items: center;
-  transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: all 0.5s ease-in-out;
 }
 
 .header.scrolled {
@@ -23,7 +24,7 @@
   width: 100%;
   left: 0;
   transform: none;
-  transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: all 0.5s ease-in-out;
 }
 
 .header-container {
@@ -41,6 +42,7 @@
 
 .logo-link {
   display: block;
+  
   text-decoration: none;
   transition: transform 0.3s ease;
 }

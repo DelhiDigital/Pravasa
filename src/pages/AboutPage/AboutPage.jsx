@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import StatisticsSection from "../../components/StatisticsSection";
@@ -7,6 +8,12 @@ import { FaCheckCircle, FaUsers, FaGlobe, FaTrophy, FaHandshake, FaChartLine } f
 import "./AboutPage.css";
 
 const AboutPage = () => {
+
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+  
   return (
     <div className="app">
       <Header />

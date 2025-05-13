@@ -28,7 +28,7 @@ import "./ServiceDetails.css"
 
 // Enhanced service details data with more comprehensive information
 const serviceDetails = {
-  study: {
+  "study": {
     title: "Study Visa",
     subtitle: "Your Gateway to International Education",
     description:
@@ -1490,7 +1490,7 @@ const serviceDetails = {
         "Attend university orientation, complete registration, open bank account, obtain local phone/transportation",
     },
   },
-  tourist: {
+  "tourist": {
     title: "Tourist Visa",
     subtitle: "Explore the World with Confidence",
     description:
@@ -2468,7 +2468,8 @@ const ServiceDetail = () => {
               </div>
 
               {/* Documents Checklist */}
-              <div className="documents-section">
+              {service.title != 'Air Ticket Service' && service.title != 'Show Money Assistance' &&(
+                <div className="documents-section">
                 <h3>Required Documents</h3>
                 <div className="documents-grid">
                   {service.documents.map((document, index) => (
@@ -2481,6 +2482,8 @@ const ServiceDetail = () => {
                   ))}
                 </div>
               </div>
+              )}
+              
             </div>
           </div>
         )}
