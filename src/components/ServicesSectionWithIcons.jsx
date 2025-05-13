@@ -22,14 +22,14 @@ if (typeof window !== "undefined") {
 }
 
 const services = [
-  { name: "Study", icon: <FaGraduationCap size={40} color="#819cd7" />, link: "#contact" },
-  { name: "Work Permit", icon: <FaBriefcase size={40} color="#819cd7" />, link: "#contact" },
-  { name: "Permanent Residency", icon: <FaHome size={40} color="#819cd7" />, link: "#contact" },
-  { name: "Family Immigration", icon: <FaUsers size={40} color="#819cd7" />, link: "#contact" },
-  { name: "Business Immigration", icon: <FaBuilding size={40} color="#819cd7" />, link: "#contact" },
-  { name: "Tourist", icon: <FaPlane size={40} color="#819cd7" />, link: "#contact" },
-  // { name: "Air ticket service", icon: <FaPlaneDeparture size={40} color="#819cd7" />, link: "#contact" },
-  // { name: "Show Money assistance", icon: <FaFileInvoiceDollar size={40} color="#819cd7" />, link: "#contact" },
+  { name: "Study", icon: <FaGraduationCap size={40} color="#819cd7" />, link: "/services/study" },
+  { name: "Work Permit", icon: <FaBriefcase size={40} color="#819cd7" />, link: "/services/work-permit" },
+  { name: "Permanent Residency", icon: <FaHome size={40} color="#819cd7" />, link: "/services/permanent-residency" },
+  { name: "Family Immigration", icon: <FaUsers size={40} color="#819cd7" />, link: "/services/family-immigration" },
+  { name: "Business Immigration", icon: <FaBuilding size={40} color="#819cd7" />, link: "/services/business-immigration" },
+  { name: "Tourist", icon: <FaPlane size={40} color="#819cd7" />, link: "/services/tourist" },
+  { name: "Air ticket service", icon: <FaPlaneDeparture size={40} color="#819cd7" />, link: "/services/air-ticket-service" },
+  { name: "Show Money assistance", icon: <FaFileInvoiceDollar size={40} color="#819cd7" />, link: "/services/show-money-assistance" },
 ]
 
 const ServicesSectionWithIcons = () => {
