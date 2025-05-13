@@ -1,10 +1,10 @@
-import { Link } from "react-router-dom"
-import Header from "../components/Header"
-import Footer from "../components/Footer"
-import StatisticsSection from "../components/StatisticsSection"
-import WhatsAppButton from "../components/WhatsAppButton"
-import { FaCheckCircle, FaUsers, FaGlobe, FaTrophy, FaHandshake, FaChartLine } from "react-icons/fa"
-import "../components/AboutPage.css"
+import { Link } from "react-router-dom";
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
+import StatisticsSection from "../../components/StatisticsSection";
+import WhatsAppButton from "../../components/WhatsAppButton";
+import { FaCheckCircle, FaUsers, FaGlobe, FaTrophy, FaHandshake, FaChartLine } from "react-icons/fa";
+import "./AboutPage.css";
 
 const AboutPage = () => {
   return (
@@ -202,28 +202,23 @@ const AboutPage = () => {
           </div>
         </section> */}
 
-        <section className="cta-section">
-          <div className="container">
-            <div className="cta-content">
-              <h2>Ready to Start Your Immigration Journey?</h2>
-              <p>Contact our team of experts for a personalized consultation</p>
-              <div className="cta-buttons">
-                <Link to="/#contact" className="btn btn-primary">
-                  Contact Us
-                </Link>
-                <Link to="/#services" className="btn btn-outline">
-                  Our Services
-                </Link>
-              </div>
+        <div className="cta-section">
+          <div className="cta-content">
+            <h2>Ready to Start Your Immigration Journey?</h2>
+            <p>Our expert consultants are ready to guide you through every step of the process.</p>
+            <div className="cta-buttons">
+              <Link to="/contact" className="btn btn-primary">
+                Get Free Assessment
+              </Link>
             </div>
           </div>
-        </section>
+        </div>
       </div>
 
       <Footer />
       <WhatsAppButton />
     </div>
-  )
-}
+  );
+};
 
-export default AboutPage
+export default AboutPage;

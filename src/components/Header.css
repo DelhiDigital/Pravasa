@@ -34,6 +34,11 @@
   padding: 0 2rem;
 }
 
+.logo {
+  height: 100px !important;
+  
+}
+
 .logo-link {
   display: block;
   text-decoration: none;

@@ -55,7 +55,7 @@ const About = () => {
               </div>
             </div>
 
-            <a href="#contact" className="btn btn-primary">
+            <a href="/contact" className="btn btn-primary">
               Get in Touch
             </a>
           </div>

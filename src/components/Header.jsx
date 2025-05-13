@@ -45,20 +45,20 @@ const Header = () => {
   // Company dropdown items
   const companyDropdown = [
     { id: 1, title: "About Us", to: "/about" },
-    { id: 2, title: "Testimonials", to: "/#testimonials" },
-    { id: 3, title: "Team", to: "/about" }, // Now links to the about page which has team section
+    { id: 2, title: "Testimonials", to: "/testimonials" },
+    // { id: 3, title: "Team", to: "/about" }, // Now links to the about page which has team section
   ]
 
   // Services dropdown items
   const servicesDropdown = [
-    { id: 1, title: "Study Visa", to: "/#services/study" },
-    { id: 2, title: "Work Permit", to: "/#services/work-permit" },
-    { id: 3, title: "Permanent Residency", to: "/#services/permanent-residency" },
-    { id: 4, title: "Family Immigration", to: "/#services/family-immigration" },
-    { id: 5, title: "Business Immigration", to: "/#services/business-immigration" },
-    { id: 6, title: "Tourist Visa", to: "/#services/tourist" },
-    { id: 7, title: "Air Ticket Service", to: "/#services/air-ticket-service" },
-    { id: 8, title: "Show Money Assistance", to: "/#services/show-money-assistance" },
+    { id: 1, title: "Study Visa", to: "/services/study" },
+    { id: 2, title: "Work Permit", to: "/services/work-permit" },
+    { id: 3, title: "Permanent Residency", to: "/services/permanent-residency" },
+    { id: 4, title: "Family Immigration", to: "/services/family-immigration" },
+    { id: 5, title: "Business Immigration", to: "/services/business-immigration" },
+    { id: 6, title: "Tourist Visa", to: "/services/tourist" },
+    { id: 7, title: "Air Ticket Service", to: "/services/air-ticket-service" },
+    { id: 8, title: "Show Money Assistance", to: "/services/show-money-assistance" },
   ]
   // const servicesDropdown = [
   //   { id: 1, title: "Study Visa", to: "/#services" },
@@ -87,7 +87,7 @@ const Header = () => {
     <header className={`header ${isScrolled ? "scrolled" : ""}`}>
       <div className="container header-container">
         <Link to="/" className="logo-link">
-          <Logo />
+          <Logo className="logo"/>
         </Link>
 
         <div className="mobile-toggle" onClick={toggleMobileMenu}>
@@ -149,13 +149,13 @@ const Header = () => {
                 Process
               </Link>
             </li>  */}
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <Link to="/faq" className="nav-link" onClick={handleMenuItemClick}>
                 FAQ
               </Link>
-            </li>
+            </li> */}
             <li className="nav-item">
-              <Link to="/#contact" className="nav-link" onClick={handleMenuItemClick}>
+              <Link to="/contact" className="nav-link" onClick={handleMenuItemClick}>
                 Contact
               </Link>
             </li>
@@ -163,7 +163,7 @@ const Header = () => {
         </nav>
 
         <div className="header-cta">
-          <Link to="/#contact" className="btn btn-primary">
+          <Link to="/contact" className="btn btn-primary">
             Free Assessment
           </Link>
         </div>

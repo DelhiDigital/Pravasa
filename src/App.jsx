@@ -9,7 +9,6 @@ import Contact from "./components/Contact"
 import Footer from "./components/Footer"
 import WhatsAppButton from "./components/WhatsAppButton"
 import FAQ from "./components/FAQ"
-import ServiceDetail from "./pages/ServiceDetail/ServiceDetail"
 
 import "./App.css"
 
@@ -25,7 +24,7 @@ function App() {
       <FAQ />
       <Process />
       <Testimonials />
-      <Contact />
+      {/* <Contact /> */}
       <Footer />
       <WhatsAppButton />
     </div>

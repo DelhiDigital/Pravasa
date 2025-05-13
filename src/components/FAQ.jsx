@@ -370,7 +370,7 @@ const FAQ = () => {
         <div className="faq-content">
           {serviceFaqs[activeTab].faqs.map((faq, index) => (
             <div key={index} className={`faq-item ${activeAccordion === index ? "active" : ""}`}>
-              <div className="faq-question" onClick={() => toggleAccordion(index)}>
+              <div className={`faq-question ${activeAccordion === index ? "active" : ""}`}  onClick={() => toggleAccordion(index)}>
                 <h3>{faq.question}</h3>
                 {activeAccordion === index ? (
                   <FaChevronUp className="faq-icon" />
