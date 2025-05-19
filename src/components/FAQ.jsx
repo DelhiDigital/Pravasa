@@ -1,7 +1,6 @@
 "use client"
 
 import { useState } from "react"
-import { FaChevronDown, FaChevronUp } from "react-icons/fa"
 import "./FAQ.css"
 
 const FAQ = () => {
@@ -13,6 +12,7 @@ const FAQ = () => {
     {
       id: 1,
       title: "Study Visa",
+      icon: "📚",
       faqs: [
         {
           question: "What are the requirements for a student visa?",
@@ -54,6 +54,7 @@ const FAQ = () => {
     {
       id: 2,
       title: "Work Permit",
+      icon: "💼",
       faqs: [
         {
           question: "What is a work permit visa?",
@@ -95,6 +96,7 @@ const FAQ = () => {
     {
       id: 3,
       title: "Permanent Residency",
+      icon: "🏠",
       faqs: [
         {
           question: "What is permanent residency?",
@@ -136,6 +138,7 @@ const FAQ = () => {
     {
       id: 4,
       title: "Family Immigration",
+      icon: "👪",
       faqs: [
         {
           question: "Who can sponsor family members for immigration?",
@@ -177,6 +180,7 @@ const FAQ = () => {
     {
       id: 5,
       title: "Business Immigration",
+      icon: "🏢",
       faqs: [
         {
           question: "What is a business immigration visa?",
@@ -218,6 +222,7 @@ const FAQ = () => {
     {
       id: 6,
       title: "Tourist Visa",
+      icon: "✈️",
       faqs: [
         {
           question: "What is a tourist visa?",
@@ -259,6 +264,7 @@ const FAQ = () => {
     {
       id: 7,
       title: "Air Ticket Service",
+      icon: "🎫",
       faqs: [
         {
           question: "What air ticket services do you provide?",
@@ -300,6 +306,7 @@ const FAQ = () => {
     {
       id: 8,
       title: "Show Money Assistance",
+      icon: "💰",
       faqs: [
         {
           question: "What is 'show money' in immigration?",
@@ -345,44 +352,95 @@ const FAQ = () => {
   }
 
   return (
-    <section id="faq" className="section faq">
-      <div className="container">
-        <div className="section-title">
+    <section className="faq-section">
+      <div className="faq-container">
+        <div className="faq-header">
           <h2>Frequently Asked Questions</h2>
           <p>Find answers to common questions about our immigration services</p>
         </div>
 
-        <div className="faq-tabs">
-          {serviceFaqs.map((service, index) => (
-            <button
-              key={service.id}
-              className={`faq-tab ${activeTab === index ? "active" : ""}`}
-              onClick={() => {
-                setActiveTab(index)
-                setActiveAccordion(0) // Reset accordion when changing tabs
-              }}
-            >
-              {service.title}
-            </button>
-          ))}
+        <div className="faq-wrapper">
+          <div className="faq-categories">
+            {serviceFaqs.map((service, index) => (
+              <button
+                key={service.id}
+                className={`category-button ${activeTab === index ? "active" : ""}`}
+                onClick={() => {
+                  setActiveTab(index)
+                  setActiveAccordion(0)
+                }}
+              >
+                <span className="category-icon">{service.icon}</span>
+                <span className="category-name">{service.title}</span>
+              </button>
+            ))}
+          </div>
+
+          <div className="faq-questions">
+            <div className="category-title">
+              <span className="category-icon large">{serviceFaqs[activeTab].icon}</span>
+              <h3>{serviceFaqs[activeTab].title} FAQs</h3>
+            </div>
+
+            <div className="accordion-list">
+              {serviceFaqs[activeTab].faqs.map((faq, index) => (
+                <div
+                  key={index}
+                  className={`accordion-item ${activeAccordion === index ? "expanded" : ""}`}
+                  onClick={() => toggleAccordion(index)}
+                >
+                  <div className="accordion-header">
+                    <h4>{faq.question}</h4>
+                    <div className="accordion-icon">
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M12 8V16M8 12H16"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                  <div className="accordion-content">
+                    <p>{faq.answer}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
 
-        <div className="faq-content">
-          {serviceFaqs[activeTab].faqs.map((faq, index) => (
-            <div key={index} className={`faq-item ${activeAccordion === index ? "active" : ""}`}>
-              <div className={`faq-question ${activeAccordion === index ? "active" : ""}`}  onClick={() => toggleAccordion(index)}>
-                <h3>{faq.question}</h3>
-                {activeAccordion === index ? (
-                  <FaChevronUp className="faq-icon" />
-                ) : (
-                  <FaChevronDown className="faq-icon" />
-                )}
-              </div>
-              <div className={`faq-answer ${activeAccordion === index ? "active" : ""}`}>
-                <p>{faq.answer}</p>
-              </div>
-            </div>
-          ))}
+        <div className="faq-footer">
+          <div className="contact-prompt">
+            <h3>Still have questions?</h3>
+            <p>Our immigration experts are ready to help you with any specific questions about your case.</p>
+            <a href="/contact" className="contact-button">
+              Contact Us
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M5 12H19M19 12L12 5M19 12L12 19"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </a>
+          </div>
         </div>
       </div>
     </section>

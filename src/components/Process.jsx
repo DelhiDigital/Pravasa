@@ -1,218 +1,274 @@
 "use client"
 
-import { useEffect, useRef } from "react"
-import { FaComments, FaFileAlt, FaClipboardCheck, FaEdit, FaPaperPlane, FaPlaneDeparture } from "react-icons/fa"
-import gsap from "gsap"
-import { ScrollTrigger } from "gsap/ScrollTrigger"
-import "./Process.css"
+import { useState, useEffect } from "react"
+import "./process.css"
 
-// Register ScrollTrigger plugin
-if (typeof window !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger)
-}
-
-const Process = () => {
-  const processRef = useRef(null)
-  const stepsRef = useRef([])
-  const detailsRef = useRef([])
+export default function Process() {
+  const [activeStep, setActiveStep] = useState(0)
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true)
 
   const steps = [
     {
       id: 1,
       title: "Free Consultation",
-      icon: <FaComments />,
       details: [
         "Schedule a free consultation",
         "Discuss your immigration goals",
         "Explore available options",
         "Get expert advice",
       ],
+      pattern: "pattern-1",
+      icon: './processIcons/consultingIcon.png',
     },
     {
       id: 2,
       title: "Document Assessment",
-      icon: <FaFileAlt />,
       details: [
         "Submit required documents",
         "Qualification assessment",
         "Identify best immigration pathway",
         "Document verification",
       ],
+      pattern: "pattern-2",
+      icon: './processIcons/documentIcon.png',
     },
     {
       id: 3,
       title: "Customized Plan",
-      icon: <FaClipboardCheck />,
       details: [
         "Receive tailored immigration plan",
         "Review specific requirements",
         "Timeline preparation",
         "Strategy development",
       ],
+      pattern: "pattern-3",
+      icon: './processIcons/immigrationIcon.png',
     },
     {
       id: 4,
       title: "Application Preparation",
-      icon: <FaEdit />,
       details: [
         "Complete application forms",
         "Prepare supporting documents",
         "Expert review and verification",
         "Final application assembly",
       ],
+      pattern: "pattern-4",
+      icon: './processIcons/fileIcon.png',
     },
     {
       id: 5,
       title: "Application Submission",
-      icon: <FaPaperPlane />,
       details: [
         "Submit to immigration authorities",
         "Track application status",
         "Handle additional requests",
         "Communicate with officials",
       ],
+      pattern: "pattern-5",
+      icon: './processIcons/submitIcon.png',
     },
     {
       id: 6,
       title: "Pre-Departure Support",
-      icon: <FaPlaneDeparture />,
       details: [
         "Pre-departure guidance",
         "Travel arrangements assistance",
         "Post-landing support",
         "Settlement orientation",
       ],
+      pattern: "pattern-6",
+      icon: './processIcons/supportIcon.png',
     },
   ]
 
+  // Auto-advance steps
   useEffect(() => {
-    if (typeof window === "undefined") return
+    if (!isAutoPlaying) return
 
-    // Create a timeline for the animations
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: processRef.current,
-        start: "top 70%",
-        toggleActions: "play none none none",
-      },
-    })
+    const interval = setInterval(() => {
+      setActiveStep((prev) => (prev + 1) % steps.length)
+    }, 5000)
 
-    // Animate the section title
-    tl.from(".process-header", {
-      y: 30,
-      opacity: 1,
-      duration: 0.8,
-      ease: "power3.out",
-    })
+    return () => clearInterval(interval)
+  }, [isAutoPlaying, steps.length])
 
-    // Animate each step with stagger
-    tl.fromTo(
-      stepsRef.current,
-      {
-        y: 30,
-        opacity: 0,
-      },
-      {
-        y: 0,
-        opacity: 1,
-        stagger: 0.15,
-        duration: 0.6,
-        ease: "power2.out",
-      },
-      "-=0.4",
-    )
+  // Pause auto-play when user interacts
+  const handleStepChange = (index) => {
+    setActiveStep(index)
+    setIsAutoPlaying(false)
 
-    // Animate details with stagger
-    tl.fromTo(
-      detailsRef.current,
-      {
-        y: 20,
-        opacity: 0,
-      },
-      {
-        y: 0,
-        opacity: 1,
-        stagger: 0.1,
-        duration: 0.4,
-        ease: "power2.out",
-      },
-      "-=0.8",
-    )
+    // Resume auto-play after 10 seconds of inactivity
+    const timeout = setTimeout(() => {
+      setIsAutoPlaying(true)
+    }, 10000)
 
-    // Animate CTA
-    tl.fromTo(
-      ".process-cta",
-      {
-        y: 20,
-        opacity: 0,
-      },
-      {
-        y: 0,
-        opacity: 1,
-        duration: 0.6,
-        ease: "power2.out",
-      },
-      "-=0.2",
-    )
-
-    // Cleanup function
-    return () => {
-      if (tl.scrollTrigger) {
-        tl.scrollTrigger.kill()
-      }
-      tl.kill()
-    }
-  }, [])
+    return () => clearTimeout(timeout)
+  }
 
   return (
-    <section id="process" className="section process" ref={processRef}>
+    <section className="process-section">
       <div className="container">
         <div className="process-header">
-          <h2 className="process-main-title">Our Process</h2>
-          <div className="title-underline"></div>
-          <p className="process-subtitle">Your Step-by-Step Journey to Global Opportunities</p>
+          <h2 className="process-title fade-in">Our Process</h2>
+          <p className="process-subtitle fade-in">Your Step-by-Step Journey to Global Opportunities</p>
         </div>
 
-        <div className="process-flow">
-          <div className="process-steps-container">
-            <div className="process-steps">
-              {steps.map((step, index) => (
-                <div className="process-step-chevron" key={step.id} ref={(el) => (stepsRef.current[index] = el)}>
-                  <div className="step-number">{step.id}</div>
-                  <div className="chevron-header">
-                    <div className="step-icon">{step.icon}</div>
-                    <h3>{step.title}</h3>
-                  </div>
-                  <div className="chevron-details">
-                    <ul>
-                      {step.details.map((detail, detailIndex) => (
-                        <li
-                          key={detailIndex}
-                          ref={(el) => {
-                            if (!detailsRef.current[index]) detailsRef.current[index] = []
-                            detailsRef.current[index][detailIndex] = el
-                          }}
-                        >
-                          {detail}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+        {/* Step Navigation */}
+        <div className="step-navigation">
+          <div className="step-nav-container">
+            {steps.map((step, index) => (
+              <button key={step.id} onClick={() => handleStepChange(index)} className="step-nav-button">
+                <div className={`step-indicator ${activeStep === index ? "active" : "inactive"}`}>{step.id}</div>
+                <div className={`step-indicator-bar ${activeStep === index ? "active" : "inactive"}`}></div>
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {/* Main Card Display */}
+        <div className="card-container">
+          <div className={`process-card ${activeStep === 0 ? "slide-in-right" : "slide-in-left"}`}>
+            {/* Left Panel - Visual */}
+            <div className="card-visual">
+              <div className={`card-pattern ${steps[activeStep].pattern}`}></div>
+
+              <div className="scale-in">
+                <div className="step-circle">
+                  <img className="step-icons" src={steps[activeStep].icon} alt="" />
                 </div>
-              ))}
+                <h3 className="step-title">{steps[activeStep].title}</h3>
+
+                {/* Animated Progress Bar */}
+                {/* <div className="progress-bar-container">
+                  <div className={`progress-bar ${isAutoPlaying ? "progress-animate" : ""}`}></div>
+                </div> */}
+              </div>
+
+              {/* Decorative Elements */}
+              <div className="decorative-circle-1"></div>
+              <div className="decorative-circle-2"></div>
+            </div>
+
+            {/* Right Panel - Content */}
+            <div className="card-content">
+              <div className={`card-pattern ${steps[activeStep].pattern}`}></div>
+
+              <div>
+                <h4 className="step-label">
+                  Step {steps[activeStep].id} of {steps.length}
+                </h4>
+
+                <ul className="details-list">
+                  {steps[activeStep].details.map((detail, idx) => (
+                    <li key={idx} className="detail-item fade-in" style={{ animationDelay: `${0.3 + idx * 0.1}s` }}>
+                      <div className="detail-number">{idx + 1}</div>
+                      <p className="detail-text">{detail}</p>
+                    </li>
+                  ))}
+                </ul>
+
+                {/* Navigation Controls */}
+                {/* <div className="navigation-controls">
+                  <button
+                    onClick={() => handleStepChange((activeStep - 1 + steps.length) % steps.length)}
+                    className="nav-button prev-button"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <path d="M15 19l-7-7 7-7" />
+                    </svg>
+                    Previous
+                  </button>
+                  <button
+                    onClick={() => handleStepChange((activeStep + 1) % steps.length)}
+                    className="nav-button next-button"
+                  >
+                    Next
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <path d="M9 5l7 7-7 7" />
+                    </svg>
+                  </button>
+                </div> */}
+              </div>
             </div>
           </div>
         </div>
 
-        <div className="process-cta text-center">
-          <p>Ready to start your immigration journey?</p>
-          <a href="#contact" className="btn btn-primary">
+        {/* Auto-play Toggle */}
+        {/* <div className="autoplay-container">
+          <button
+            onClick={() => setIsAutoPlaying(!isAutoPlaying)}
+            className={`autoplay-button ${isAutoPlaying ? "" : "paused"}`}
+          >
+            {isAutoPlaying ? (
+              <>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M10 9v6m4-6v6m7-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                Pause Auto-Play
+              </>
+            ) : (
+              <>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                  <path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                Resume Auto-Play
+              </>
+            )}
+          </button>
+        </div> */}
+
+        <div className="cta-container fade-in">
+          <p className="cta-text">Ready to start your immigration journey?</p>
+          <a href="#contact" className="cta-button">
             Get Started Today
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
           </a>
         </div>
       </div>
     </section>
   )
 }
-
-export default Process
