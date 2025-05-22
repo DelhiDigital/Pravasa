@@ -251,7 +251,7 @@ export default function Process() {
           </button>
         </div> */}
 
-        <div className="cta-container fade-in">
+        {/* <div className="cta-container fade-in">
           <p className="cta-text">Ready to start your immigration journey?</p>
           <a href="#contact" className="cta-button">
             Get Started Today
@@ -267,7 +267,7 @@ export default function Process() {
               <path d="M14 5l7 7m0 0l-7 7m7-7H3" />
             </svg>
           </a>
-        </div>
+        </div> */}
       </div>
     </section>
   )
