@@ -5,7 +5,7 @@
   --primary-dark: #819cd7;
   --gray: #6c757d;
   --light-gray: #e9ecef;
-  --dark: #333333;
+  --dark: #1e293b;
 }
 
 /* Main Section Styling */
@@ -114,9 +114,9 @@
 }
 
 .step-indicator.active {
-  background-color: var(--primary);
-  color: white;
-  border: 2px solid var(--primary);
+  background-color: var(--white);
+  color: var(--primary);
+  border: 2px solid var(--primary-dark);
 }
 
 .step-indicator.inactive {
@@ -125,7 +125,7 @@
   border: 2px solid var(--light-gray);
 }
 
-.step-indicator-bar {
+/* .step-indicator-bar {
   height: 4px;
   width: 2.5rem;
   margin-top: 0.5rem;
@@ -139,7 +139,7 @@
 
 .step-indicator-bar.inactive {
   background-color: var(--light-gray);
-}
+} */
 
 /* Main Card Display */
 .card-container {

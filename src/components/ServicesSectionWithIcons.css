@@ -1,5 +1,5 @@
 .services-section {
-  padding: 120px 0;
+  /* padding: 120px 0; */
   background-color: #f8f9fa;
   position: relative;
   overflow: hidden;
@@ -54,7 +54,7 @@
 
 .services-tag {
   display: inline-block;
-  background-color: #ff6b6b;
+  background-color: #496583;
   color: white;
   font-size: 14px;
   font-weight: 600;
@@ -115,7 +115,7 @@
   left: 0;
   width: 100%;
   height: 4px;
-  background: linear-gradient(90deg, #ff6b6b, #6b9bff);
+  background: var(--primary);
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.3s ease;
@@ -142,16 +142,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #f0f4ff, #e6eeff);
+  /* background: linear-gradient(135deg, #f0f4ff, #e6eeff); */
   border-radius: 16px;
   margin-bottom: 10px;
-  color: #6b9bff;
+  /* color: #6b9bff; */
   transition: all 0.3s ease;
 }
 
 .service-card:hover .service-icon {
-  background: linear-gradient(135deg, #6b9bff, #4a7dff);
-  color: white;
+ scale: 1.2;
+ transform: ease-in-out;
 }
 
 .service-card h3 {
@@ -162,7 +162,7 @@
 }
 
 .service-card:hover h3 {
-  color: #6b9bff;
+  color: var(--primary);
 }
 
 .service-card-arrow {
@@ -173,7 +173,7 @@
 }
 
 .service-card:hover .service-card-arrow {
-  color: #6b9bff;
+  color: var(--primary);
   transform: translateX(5px);
 }
 
@@ -233,7 +233,7 @@
   color: #ff6b6b;
 }
 
-.contact-button {
+.servicecontact-button {
   background: linear-gradient(90deg, #ff6b6b, #ff8e8e);
   color: white;
   font-weight: 600;
@@ -244,7 +244,7 @@
   box-shadow: 0 10px 20px rgba(255, 107, 107, 0.3);
 }
 
-.contact-button:hover {
+.servicecontact-button:hover {
   transform: translateY(-5px);
   box-shadow: 0 15px 30px rgba(255, 107, 107, 0.4);
 }
@@ -293,7 +293,7 @@
     padding: 30px;
   }
 
-  .contact-button {
+  .contact-servicecontact {
     align-self: stretch;
     text-align: center;
   }

@@ -1,6 +1,6 @@
 :root {
-  --primary: #758fc6;
-  --primary-dark: #819cd7;
+  --primary: #1e293b;
+  --primary-dark: #496583;
   --secondary: #ff6b35;
   --dark: #333333;
   --light: #f5f7fa;
@@ -8,8 +8,8 @@
   --light-gray: #e9ecef;
   --white: #ffffff;
   --success: #28a745;
-  --font-main: "Poppins", sans-serif;
-  --font-heading: "Montserrat", sans-serif;
+  --font-main: "Gilroy", sans-serif;;
+  --font-heading: "Gilroy", sans-serif;
   --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   --transition: all 0.3s ease;
 }
@@ -81,11 +81,12 @@ a:hover {
   cursor: pointer;
   transition: var(--transition);
   border: none;
+  border-radius: 50px;
 }
 
 .btn-primary {
-  background-color: var(--primary);
-  color: var(--white);
+  background-color: var(--white);
+  color: var(--primary);
 }
 
 .btn-primary:hover {
@@ -99,11 +100,11 @@ a:hover {
 }
 
 .btn-secondary:hover {
-  background-color: #e55a2b;
+  background-color: var(--primary);
   color: var(--white);
 }
 
-.btn-outline {
+/* .btn-outline {
   background-color: transparent;
   border: 2px solid var(--primary);
   color: var(--primary);
@@ -112,7 +113,7 @@ a:hover {
 .btn-outline:hover {
   background-color: var(--primary);
   color: var(--white);
-}
+} */
 
 .section {
   padding: 2rem 0;

@@ -132,7 +132,7 @@ const ServicesSectionWithIcons = () => {
           ))}
         </div>
 
-        <div className="services-contact" ref={contactRef}>
+        {/* <div className="services-contact" ref={contactRef}>
           <div className="contact-card">
             <div className="contact-card-content">
               <div className="contact-avatar">
@@ -145,11 +145,11 @@ const ServicesSectionWithIcons = () => {
                 </h3>
               </div>
             </div>
-            <a href="/contact" className="contact-button">
+            <a href="/contact" className="servicecontact-button">
               Schedule a Call
             </a>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   )

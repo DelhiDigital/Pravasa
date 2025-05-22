@@ -1,5 +1,3 @@
-"use client"
-
 import { useEffect, useRef } from "react"
 import { gsap } from "gsap"
 import "./Hero.css"
@@ -77,7 +75,7 @@ const Hero = () => {
     <section id="home" className="hero">
       <div className="hero-container" ref={containerRef}>
         <div className="hero-content">
-          <h1 >We Build Your Future Beyond Borders</h1>
+          <h1 >Exclusive Immigration Services for the Global Elite</h1>
           <div className="service-text-container">
             <p className="service-text" ref={serviceTextRef}></p>
           </div>

@@ -12,7 +12,7 @@ const FAQ = () => {
     {
       id: 1,
       title: "Study Visa",
-      icon: "📚",
+      // icon: "📚",
       faqs: [
         {
           question: "What are the requirements for a student visa?",
@@ -54,7 +54,7 @@ const FAQ = () => {
     {
       id: 2,
       title: "Work Permit",
-      icon: "💼",
+      // icon: "💼",
       faqs: [
         {
           question: "What is a work permit visa?",
@@ -96,7 +96,7 @@ const FAQ = () => {
     {
       id: 3,
       title: "Permanent Residency",
-      icon: "🏠",
+      // icon: "🏠",
       faqs: [
         {
           question: "What is permanent residency?",
@@ -138,7 +138,7 @@ const FAQ = () => {
     {
       id: 4,
       title: "Family Immigration",
-      icon: "👪",
+      // icon: "👪",
       faqs: [
         {
           question: "Who can sponsor family members for immigration?",
@@ -180,7 +180,7 @@ const FAQ = () => {
     {
       id: 5,
       title: "Business Immigration",
-      icon: "🏢",
+      // icon: "🏢",
       faqs: [
         {
           question: "What is a business immigration visa?",
@@ -222,7 +222,7 @@ const FAQ = () => {
     {
       id: 6,
       title: "Tourist Visa",
-      icon: "✈️",
+      // icon: "✈️",
       faqs: [
         {
           question: "What is a tourist visa?",
@@ -264,7 +264,7 @@ const FAQ = () => {
     {
       id: 7,
       title: "Air Ticket Service",
-      icon: "🎫",
+      // icon: "🎫",
       faqs: [
         {
           question: "What air ticket services do you provide?",
@@ -306,7 +306,7 @@ const FAQ = () => {
     {
       id: 8,
       title: "Show Money Assistance",
-      icon: "💰",
+      // icon: "💰",
       faqs: [
         {
           question: "What is 'show money' in immigration?",

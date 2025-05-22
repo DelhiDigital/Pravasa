@@ -117,12 +117,12 @@
     transform: translateY(-5px);
   }
   
-  .stat-value {
+  /* .stat-value {
     font-size: 36px;
     font-weight: 700;
     color: #819cd7;
     margin-bottom: 10px;
-  }
+  } */
   
   .stat-label {
     font-size: 16px;
@@ -263,7 +263,7 @@
     border-bottom: 1px solid #eaeaea;
   }
   
-  .service-icon {
+  .testnomialsservice-icon {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -391,12 +391,12 @@
   }
   
   /* CTA Section Styles */
-  .cta-section {
+  /* .cta-section {
     background-color: #819cd7;
     padding: 60px 0;
     color: #fff;
     text-align: center;
-  }
+  } */
   
   .cta-content h2 {
     font-size: 32px;

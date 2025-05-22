@@ -1,30 +1,32 @@
 .header {
   position: fixed;
   top: 0;
-  left: 5%;
-  /* transform: translateX(-50%); */
-  width: 90%;
+  left: 0;
+  width: 100%;
   z-index: 1000;
   background-color: transparent;
-  background-color: #ffff;
   height: 70px;
-  border-radius: 10px;
-  margin-top: 15px;
-  
+  /* border-radius: 10px; */
+  /* margin-top: 15px; */
   display: flex;
   align-items: center;
-  transition: all 0.5s ease-in-out;
+  transition: background-color 0.5s ease, box-shadow 0.5s ease, backdrop-filter 0.5s ease;
+  background-color: var(--white);
+  backdrop-filter: blur(10px);
 }
 
 .header.scrolled {
-  background-color: var(--white);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(255, 255, 255, 0.18);
   margin-top: 0;
   border-radius: 0;
   width: 100%;
   left: 0;
   transform: none;
-  transition: all 0.5s ease-in-out;
+  transition: background-color 0.5s ease, box-shadow 0.5s ease, backdrop-filter 0.5s ease;
 }
 
 .header-container {
@@ -33,16 +35,17 @@
   align-items: center;
   height: 100%;
   padding: 0 2rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .logo {
-  height: 100px !important;
-  
+  height: 100px;
 }
 
 .logo-link {
   display: block;
-  
   text-decoration: none;
   transition: transform 0.3s ease;
 }
@@ -55,6 +58,8 @@
   display: flex;
   list-style: none;
   gap: 2.5rem;
+  margin: 0;
+  padding: 0;
 }
 
 .nav-item {
@@ -67,13 +72,11 @@
   color: var(--dark);
   font-weight: 600;
   position: relative;
-  color: #333333;
   padding: 0.5rem 0;
   cursor: pointer;
-}
-
-header.scrolled .nav-link {
-  color: var(--dark);
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 
 .nav-link::after {
@@ -84,7 +87,7 @@ header.scrolled .nav-link {
   width: 0;
   height: 2px;
   background-color: var(--primary);
-  transition: var(--transition);
+  transition: width 0.3s ease;
 }
 
 .nav-link:hover::after {
@@ -105,6 +108,8 @@ header.scrolled .nav-link {
 .dropdown-icon {
   font-size: 0.75rem;
   transition: transform 0.3s ease;
+  width: 16px;
+  height: 16px;
 }
 
 .dropdown.active .dropdown-icon {
@@ -115,9 +120,9 @@ header.scrolled .nav-link {
   position: absolute;
   top: 100%;
   left: 0;
-  background-color: white;
+  background-color: var(--white);
   min-width: 220px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow);
   border-radius: 8px;
   padding: 0.5rem 0;
   opacity: 0;
@@ -139,13 +144,13 @@ header.scrolled .nav-link {
   padding: 0.75rem 1.5rem;
   color: var(--dark);
   font-weight: 500;
-  transition: all 0.2s ease;
+  transition: var(--transition);
   text-decoration: none;
 }
 
 .dropdown-item:hover {
-  background-color: rgba(78, 123, 255, 0.1);
-  color: var(--primary);
+  background-color:var(--primary); /* soft green highlight */
+  color: var(--white);
 }
 
 .mobile-toggle {
@@ -168,33 +173,36 @@ header.scrolled .nav-link {
   border-radius: 30px;
   padding: 0.75rem 1.5rem;
   font-weight: 600;
-  background-color: #819cd7;
+  background-color: var(--primary);
+  color: var(--white);
   border: none;
-  transition: all 0.3s ease;
+  transition: var(--transition);
+  text-decoration: none;
+  display: inline-block;
 }
 
 .header-cta .btn:hover {
   transform: translateY(-3px);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  background-color: var(--primary-dark);
+  color: var(--white) !important;
+  
 }
 
 @media (max-width: 992px) {
-  /* Always set header background to white on mobile/tablet */
   .header {
-    background-color: var(--white);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(255, 255, 255, 0.18);
     width: 100%;
     left: 0;
     transform: none;
     border-radius: 0;
     margin-top: 0;
     height: 80px;
-    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  }
-
-  /* Set nav links to dark color since background is white */
-  .nav-link {
-    color: var(--dark);
+    transition: background-color 0.3s ease;
   }
 
   .mobile-toggle {
@@ -208,7 +216,7 @@ header.scrolled .nav-link {
     width: 100%;
     height: calc(100vh - 80px);
     background-color: var(--white);
-    transition: var(--transition);
+    transition: left 0.3s ease;
     padding: 2rem;
     overflow-y: auto;
   }
@@ -227,7 +235,6 @@ header.scrolled .nav-link {
     display: none;
   }
 
-  /* Mobile dropdown styles */
   .dropdown-menu {
     position: static;
     box-shadow: none;
