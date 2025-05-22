@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import "./process.css"
+import "./Process.css"
 
 export default function Process() {
   const [activeStep, setActiveStep] = useState(0)
