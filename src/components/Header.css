@@ -57,7 +57,7 @@
 .nav-list {
   display: flex;
   list-style: none;
-  gap: 2.5rem;
+  gap: 1rem;
   margin: 0;
   padding: 0;
 }
@@ -228,7 +228,7 @@
   .nav-list {
     flex-direction: column;
     align-items: center;
-    gap: 3rem;
+    gap: 1.5rem;
   }
 
   .header-cta {
@@ -262,5 +262,29 @@
   .nav-item.dropdown {
     flex-direction: column;
     width: 100%;
+  }
+}
+
+
+/* Update the mobile navigation styles to align items to the left */
+@media (max-width: 992px) {
+  .nav-list {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+
+  .dropdown-item {
+    text-align: left;
+  }
+
+  .nav-link {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .dropdown-toggle {
+    width: 100%;
+    justify-content: space-between;
   }
 }

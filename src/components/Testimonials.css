@@ -129,7 +129,9 @@
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background-color: var(--light-gray);
+  background-color: black;
+  border: 1px solid var(--light-gray);
+  transition: var(--transition);
   cursor: pointer;
   transition: var(--transition);
 }

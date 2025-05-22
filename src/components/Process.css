@@ -101,8 +101,8 @@
 }
 
 .step-indicator {
-  width: 3.5rem;
-  height: 3.5rem;
+  width: 3rem;
+  height: 3rem;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -144,7 +144,7 @@
 /* Main Card Display */
 .card-container {
   position: relative;
-  height: 500px;
+  height: 580px;
 }
 
 @media (min-width: 768px) {

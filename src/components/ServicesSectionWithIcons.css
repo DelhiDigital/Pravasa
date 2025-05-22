@@ -214,13 +214,13 @@
   object-fit: cover;
 }
 
-.contact-info p {
+.serviceicon-contact-info p {
   margin: 0 0 8px 0;
   font-size: 16px;
   opacity: 0.8;
 }
 
-.contact-info h3 {
+.serviceicon-contact-info h3 {
   margin: 0;
   font-size: 24px;
   font-weight: 600;
@@ -319,12 +319,12 @@
     margin: 0 auto 20px;
   }
 
-  .contact-info {
+  .serviceicon-contact-info {
     text-align: center;
     width: 100%;
   }
 
-  .contact-info h3 {
+  .serviceicon-contact-info h3 {
     justify-content: center;
   }
 }

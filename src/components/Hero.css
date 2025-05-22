@@ -92,6 +92,9 @@
   .service-text-container {
     height: 55px;
   }
+  .hero{
+    height: 80vh;
+  }
 }
 
 @media (max-width: 768px) {
@@ -99,6 +102,9 @@
     left: 5%;
     width: 90%;
     bottom: 12%;
+  }
+  .hero{
+    height: 80vh;
   }
 
   .hero h1,
@@ -123,6 +129,9 @@
     left: 5%;
     width: 90%;
     bottom: 10%;
+  }
+  .hero{
+    height: 70vh;
   }
 
   .hero h1,
